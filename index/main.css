@@ -4,13 +4,23 @@ body {
     height: 100vh;
     background: rgba(0, 0, 0, .05);
 }
-
+.backdrop {
+    transition: all ease 600ms;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 30;
+    pointer-events: none;
+}
 .body {
     height: 100%;
     width: 100%;
 }
 
 .content-container {
+    cursor: pointer;
     transition: all linear 200ms;
     height: 45vh;
     display: flex;

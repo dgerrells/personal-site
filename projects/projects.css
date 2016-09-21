@@ -1,0 +1,98 @@
+.header {
+    transition: all linear 300ms;
+    height: 138px;
+    background-color: black;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.header * {
+    padding: 1rem;
+}
+
+.back-button {
+    transition: all linear 100ms;
+    animation: fadeInLeft 800ms;
+    z-index: 2;
+}
+
+.back-button:hover {
+    transform: scale(1.2);
+}
+.project-content {
+    padding: 1rem;
+    transition: all ease 800ms;
+    color: white;
+    font-size: 2rem;
+    transform: translateY(100%);
+    line-height: 2.5rem;
+    opacity: 0;
+}
+.content-container:hover .project-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+.content-container:hover {
+    transform: scale(1);
+    color: white;
+    background-color: rgba(0, 0, 0, .99);
+    z-index: 20;
+    max-height: 500px;
+}
+.content-container {
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    pointer: click;
+    max-height: 400px;
+}
+.content-container .project-title {
+    position: absolute;
+}
+.content-container .project-title.open {
+    position: relative;
+    color: white;
+    opacity: 0;
+}
+.content-container:hover .project-title {
+    position: absolute;
+    animation: fadeOutUp 400ms;
+    opacity: 0;
+}
+.content-container:hover .project-title.open {
+    position: relative;
+    display: block;
+    animation: fadeInUp 900ms;
+    opacity: 1;
+}
+.project-theme {
+    color: white;
+}
+.content-container:hover .project-theme {
+    animation: fadeInDown 650ms;
+}
+@media (max-width: 650px) {
+    .project-content {
+        font-size: 1.8rem;
+    }
+    .project-theme {
+        margin-bottom: 0;
+    }
+    #back .fa {
+        font-size: 6rem;
+    }
+}
+@media (min-width: 550px) {
+    .header {
+        height: 178px;
+    }
+}
+@media (max-width: 750px) {
+    .six.columns {
+        width: 100%;
+    }
+}

@@ -50,6 +50,12 @@ hr {
     }
 }
 
+@media (max-width: 650px) {
+    #back .fa {
+        font-size: 6rem;
+    }
+}
+
 @media (min-width: 800px) {
     .about-content {
         transform: translateY(-10rem);
