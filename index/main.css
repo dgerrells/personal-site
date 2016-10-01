@@ -84,6 +84,9 @@ body {
     .fa.icon {
         font-size: 14rem;
     }
+    .contact-items {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (min-width: 550px) {

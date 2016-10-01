@@ -23,61 +23,106 @@
 .back-button:hover {
     transform: scale(1.2);
 }
-.project-content {
+
+.flex-grow {
+    flex: 1;
+}
+.card-tech {
+    padding: 1rem 0 1rem 0;
+    background: rgba(255,255,255,.05);
+}
+.card-tech div {
+    padding: 0.5rem;
+}
+.card-tech .items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-tech .items span {
+    flex: 1;
+    flex-basis: initial;
+    padding: 0.5rem;
+}
+.card-tech .tech-title {
+    font-size: 1.8rem;
+}
+
+.card .project-content {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.card-footer {
     padding: 1rem;
-    transition: all ease 800ms;
+}
+
+.card-footer a.button.button-primary {
+    background-color: transparent;
+    border-color: white;
     color: white;
-    font-size: 2rem;
-    transform: translateY(100%);
-    line-height: 2.5rem;
-    opacity: 0;
 }
-.content-container:hover .project-content {
-    transform: translateY(0);
-    opacity: 1;
+
+.card-footer a.button.button-primary:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
 }
-.content-container:hover {
-    transform: scale(1);
-    color: white;
-    background-color: rgba(0, 0, 0, .99);
-    z-index: 20;
-    max-height: 500px;
+
+.flip {
+    -webkit-perspective: 800;
+    position: relative;
+    margin: 1rem;
+    cursor: pointer;
 }
-.content-container {
-    flex-direction: column;
+.flip .card {
+    width: 100%;
     height: 100%;
-    overflow: hidden;
-    pointer: click;
-    max-height: 400px;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    height: 50vh;
 }
-.content-container .project-title {
+.flip .card.flipped {
+    transform: rotatex(-180deg);
+    height: 70vh;
+    z-index: 20;
+}
+.flip .card .face {
+    width: 100%;
+    height: 100%;
     position: absolute;
+    -webkit-backface-visibility: hidden;
+    z-index: 6;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
 }
-.content-container .project-title.open {
-    position: relative;
-    color: white;
-    opacity: 0;
-}
-.content-container:hover .project-title {
+.flip .card .front {
     position: absolute;
-    animation: fadeOutUp 400ms;
-    opacity: 0;
+    padding: 1rem;
+    z-index: 5;
+    background: white;
+    color: black;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.content-container:hover .project-title.open {
-    position: relative;
-    display: block;
-    animation: fadeInUp 900ms;
-    opacity: 1;
-}
-.project-theme {
+.flip .card .back {
+    transform: rotatex(-180deg);
+    background: #303030;
     color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.content-container:hover .project-theme {
-    animation: fadeInDown 650ms;
+.flip .card .back h2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
+
 @media (max-width: 650px) {
     .project-content {
-        font-size: 1.8rem;
+        font-size: 90%;
+        line-height: 1.6rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     .project-theme {
         margin-bottom: 0;
@@ -85,10 +130,28 @@
     #back .fa {
         font-size: 6rem;
     }
+    .flip .card.flipped {
+        height: 100vh;
+    }
 }
 @media (min-width: 550px) {
     .header {
         height: 178px;
+    }
+}
+@media (min-width: 800px) {
+    .flip .card.flipped {
+        height: 70vh;
+    }
+}
+@media (min-width: 1000px) {
+    .flip .card.flipped {
+        height: 65vh;
+    }
+}
+@media (min-width: 1200px) {
+    .flip .card.flipped {
+        height: 60vh;
     }
 }
 @media (max-width: 750px) {
