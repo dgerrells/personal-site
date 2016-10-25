@@ -79,11 +79,11 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: 0.5s;
-    height: 50vh;
+    height: 50%;
 }
 .flip .card.flipped {
     transform: rotatex(-180deg);
-    height: 70vh;
+    height: 70%;
     z-index: 20;
 }
 .flip .card .face {

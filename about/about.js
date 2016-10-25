@@ -1,6 +1,7 @@
 (function () {
     var getClickHandler = function ($element, dest, replace) {
         return function () {
+            $('.backdrop').attr('style', 'opacity: 1;');
             $element.velocity({
                 properties: {
                     scale: 1.8,
