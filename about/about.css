@@ -25,6 +25,7 @@ hr {
     display: flex;
     justify-content: left;
     align-items: center;
+    position: relative;
 }
 
 .header * {

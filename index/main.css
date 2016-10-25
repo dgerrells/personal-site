@@ -3,6 +3,10 @@ body {
     width: 100vw;
     background: rgba(0, 0, 0, .05);
     overflow: hidden;
+    box-sizing: border-box;
+}
+div {
+    box-sizing: border-box;
 }
 .backdrop {
     transition: all ease 600ms;
@@ -76,6 +80,17 @@ body {
 
 .contact-item:not(:first-child) {
     margin-left: 2rem;
+}
+
+@media (max-width: 900px) {
+    .fa.contact-item {
+        font-size: 9rem;
+    }
+}
+@media (max-width: 800px) {
+    .fa.contact-item {
+        font-size: 8.5rem;
+    }
 }
 
 @media (max-width: 650px) {
