@@ -24,6 +24,10 @@ div {
     overflow-y: auto;
 }
 
+#app {
+    padding: 0.5rem;
+}
+
 .content-container {
     cursor: pointer;
     transition: all linear 200ms;
@@ -34,7 +38,7 @@ div {
     align-items: center;
     /* align vertical */
     padding: 1rem;
-    margin: 1rem;
+    margin: 0.5rem;
     text-align: center;
     animation: fadeIn 1500ms;
     background: rgba(255, 255, 255, 1);
